@@ -79,10 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'flightdb',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'USER': '[USERNAME]',
+        'PASSWORD': '[your_password]',
         'HOST': 'localhost',
-        'PORT': '5433'
+        'PORT': '[Your_port]'
     }
 }
 
