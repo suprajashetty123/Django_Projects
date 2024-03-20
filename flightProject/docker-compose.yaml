@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+    api:
+        build:
+            context: .
+        image: django-api
+        environment:
+            DB_USER: "postgres"
+            DB_PWD: "admin"
+            DB_HOST: postgres
+            DB_PORT: "5433"
+            DB_NAME: "flightdb"
+        volumes:
+            - ./:/app/
+        ports:
+            - "80:5000"
+        depends_on:
+            - postgres
+    postgres:
+        image: postgres:13.6
+        restart: always
+        ports:
+            - "5433:5432"
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=admin
